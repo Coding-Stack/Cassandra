@@ -1,0 +1,11 @@
+- partitions allow tables to be split into multiple partitions so that it can be easily managed and searched.
+- these partitions can be split via partition key(a column inside table).
+- paritioner is a hashing function which map the partition key to a token value, which can be further
+  use to place data on the cassandra ring.
+- partition key is used as a primary key along with clustering column.
+  PRIMERY KEY(partition_key)
+- display the token for partition_key
+  SELECT token(partition_key), partition_key FROM videos;
+- cassandra allow filters only on PRIMERY keys if you want to filter other columns then it needs to scan
+  all records which is not a good search but can allowed via `ALLOW FILTERING`.
+  

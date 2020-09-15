@@ -1,0 +1,8 @@
+- cassandra is fast distributed db, with high availability and linear scalability.
+  It follow peers to peers connection
+- in terms of cap theoram, during partition data can't be consistent and high available at same time
+  so cassandra choose high availability here as it is difficult to manage consistentcy in distributed database
+- consistency levels means the no of replicas whose ack is required for read/write query to mark theoram
+  successful operations.
+  it can be one or quorom(majority, >50%).
+- data is updated in local data center by client then it is async updated in other data centers

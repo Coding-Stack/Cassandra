@@ -1,0 +1,10 @@
+- clustering column helps the data to be arranged inside the each partition.
+- we can perform =,>,< operations on the clustering columns.
+- as data is stored in sorted fashion then binary search can also be used.
+- order of clustering column in the query should be same as the order in which they are defined inside schema
+- clustering column combined with the partition key to build primary key
+  PRIMERY KEY((partition_key), clustering_columns...)
+- clustering columns as asc as default order.
+  WITH CLUSTERING ORDER BY(city DESC, name ASC);
+- we can't change the primary key dynamically.
+- allow filtering search the data inside all partitions

@@ -1,0 +1,8 @@
+- create keyspace name with replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+- describe keyspaces
+- use keyspace_name
+- create table table_name (column_name datatype,....,PRIMERY KEY(id));
+- insert into table_name (columns) values(values);
+- select * from table_name
+- truncate table_name
+- copy table_name(columns) copy 'path' with header=true;

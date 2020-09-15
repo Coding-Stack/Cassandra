@@ -1,0 +1,10 @@
+- rdbms used to handle medium data, fits on one machine
+- it can supports hundreds of cocurrent users and have acid properties.
+- vertically scalable
+- in case of replication if we are maintaining the data in master & slave then there will be 
+  some replication delay and this replication is sychronous so there can be possibilty that 
+  client get some older data, which may fail acid properties.
+- when data become complex(lots of tables)then user may have to write some complex queries and if 
+  user want to simplfy the query then we need to denormalise the data. which may increase the duplication factor
+- sharding is a problem, cuz it may increase the search time complexity and schema changes in shard is also a trouble
+- fail over process is difficult to manage which can increase the downtime.

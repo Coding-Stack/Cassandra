@@ -1,0 +1,12 @@
+write:
+- writes can be written to any node(coordinator node).
+- first data is written to a immutable commit log
+- then it is updated to inmemory(memtables) which is fixed size memory
+- every data contains timestamp, which helps to pick the latest data during read/compaction
+- memtables flushed to disk periodically as they have limited storage.
+- deletes are called tombstone, which doesn't contains timestamp but can be helper during backup
+
+read:
+- any server may queried and act as a coordinator.
+- data is picked from sstables and return back to coordinator.
+- if consistency level < read-repair then it do read repair to maintain the consistency with latest data
